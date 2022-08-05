@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, VERSION, Version } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'quanLyCuDan';
-  name = 'Nga';
   user = {
     name: 'John',
     age: 10,
@@ -35,4 +34,8 @@ export class AppComponent {
     },
     // more data
   ];
+
+  name = 'Angular' + VERSION.major;
+  isDanger = false;
+  isWarning = false;
 }

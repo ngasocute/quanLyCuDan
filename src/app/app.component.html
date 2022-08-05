@@ -377,7 +377,7 @@
 <router-outlet></router-outlet>
 <br><br>
  <!--two way binding-->
-{{name}}
+<p>Input</p>
 <input type="text" [(ngModel)]="name"/>
 <br><br>
 
@@ -395,3 +395,45 @@
     {{author.lastName}}
   </div>
 </ng-template>
+
+<!--class binding-->
+<br><br>
+<div class="foo" style="color: red;">
+  <p>Here is color!</p>
+</div>
+
+<button class="box" [class.box]="false" (click)="isDanger = !isDanger">
+  Toggle danger
+</button>
+<br>
+
+<button class="box" [class.box]="false" (click)="isWarning = !isWarning">
+  Toggle warning
+</button>
+
+<div class="box" [class.red-border]="isDanger" [class.red-border]="isWarning"></div>
+<!-- <div class="box" [class.red-border]="isWarning"></div> -->
+
+<!-- <div [class]="['box']" [class.red-border]="isDanger"></div> -->
+
+<!--
+  [class]="ten-class"
+  [class]="array"
+  [class]="object"
+-->
+
+<div [class]="{'box':isDanger}"></div>
+
+<br><br>
+<!--style binding-->
+<p [style.color]="'red'" [style.background-color]="'yellow'" [style.fontSize]="'2rem'">
+  Here is some magic!
+</p>
+<br><br>
+<p [style]="{color:'red', backgroundColor: 'yellow'}">
+ Nga so cute
+</p>
+
+<p [style.textcolor] = "isDanger ? 'red' : 'blue'" > 
+  Nga
+</p>
